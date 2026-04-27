@@ -96,16 +96,6 @@ validGroups.forEach {
 }
 ```
 ----
-## 📁 File Format
-The input file (eventyr.txt) should contain one word per line, for example:
-
-text
-akte
-teak
-kate
-alt
-tal
-----
 
 ## 🛠️ Built With
 Kotlin
