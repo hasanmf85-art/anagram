@@ -16,6 +16,8 @@ fun main() {
     // Read all lines/words from the provided file
     val words = File("src/main/resources/eventyr.txt")
             .readLines(StandardCharsets.UTF_8)
+            .map { it.trim() }
+            .filter { it.isNotEmpty() }
 
 
     // Sort the words by their letters
