@@ -3,10 +3,11 @@
 A clean and efficient Kotlin application that reads a word list from a file and finds all groups of words that are anagrams of each other.
 
 This project demonstrates:
-- Algorithmic thinking
-- Kotlin collection handling
-- Clean project structure with Gradle
-- Practical problem-solving approach
+
+- Algorithmic thinking  
+- Kotlin collection handling  
+- Clean project structure with Gradle  
+- Practical problem-solving approach  
 
 ---
 
@@ -14,10 +15,10 @@ This project demonstrates:
 
 Given a file (`eventyr.txt`) containing one word per line, the task is to:
 
-- Identify words that have one or more anagrams in the same file
-- Group those words together
-- Print each group on a single line
-- Ignore words without anagrams
+- Identify words that have one or more anagrams in the same file  
+- Group those words together  
+- Print each group on a single line  
+- Ignore words without anagrams  
 
 ---
 
@@ -28,7 +29,7 @@ The solution is based on the idea that:
 > Two words are anagrams if they contain the same letters in a different order.
 
 ### Key idea:
-Each word is transformed into a **normalized signature**:
+Each word is transformed into a normalized signature:
 
 
 akte → aekt
@@ -44,18 +45,35 @@ Words with the same signature are grouped together.
 
 The program:
 
-1. Reads all words from file
-2. Trims and filters empty lines
-3. Creates a sorted character signature for each word
-4. Groups words using `groupBy`
-5. Filters out groups with only one word
-6. Prints each anagram group
+- Reads all words from file  
+- Trims and filters empty lines  
+- Creates a sorted character signature for each word  
+- Groups words using `groupBy`  
+- Filters out groups with only one word  
+- Prints each anagram group  
 
 ---
 
-## 🧠 Core Logic
+## ▶️ How to Run
 
-```kotlin
+### 1. Clone the repository
+```bash
+git clone https://github.com/hasanmf85-art/anagram
+cd anagram
+2. Run with Gradle
+./gradlew run
+
+(On Windows:)
+
+gradlew.bat run
+📊 Example Output
+akte teak kate
+alt tal
+andre rande denar ander
+
+Each line represents a group of words that are anagrams.
+
+🧠 Core Logic
 val anagramGroups = words.groupBy { word ->
     word.toCharArray().sorted().joinToString("")
 }
