@@ -30,12 +30,11 @@ The solution is based on the idea that:
 
 ### Key idea:
 Each word is transformed into a normalized signature:
-
-
 akte → aekt
 teak → aekt
 kate → aekt
 
+text
 
 Words with the same signature are grouped together.
 
@@ -52,28 +51,38 @@ The program:
 - Filters out groups with only one word  
 - Prints each anagram group  
 
----
+
 
 ## ▶️ How to Run
 
-### 1. Clone the repository
 ```bash
+# Clone the repository
 git clone https://github.com/hasanmf85-art/anagram
 cd anagram
-2. Run with Gradle
+
+# Run with Gradle (Linux / macOS)
 ./gradlew run
 
-(On Windows:)
+# On Windows, use:
+gradlew.bat run
+
 
 gradlew.bat run
-📊 Example Output
+```
+---
+
+### 📊 Example Output
+text
 akte teak kate
 alt tal
 andre rande denar ander
-
 Each line represents a group of words that are anagrams.
 
-🧠 Core Logic
+---
+### 🧠 Core Logic
+
+
+kotlin
 val anagramGroups = words.groupBy { word ->
     word.toCharArray().sorted().joinToString("")
 }
@@ -84,3 +93,16 @@ val validGroups = anagramGroups.values
 validGroups.forEach {
     println(it.joinToString(" "))
 }
+📁 File Format
+The input file (eventyr.txt) should contain one word per line, for example:
+
+text
+akte
+teak
+kate
+alt
+tal
+🛠️ Built With
+Kotlin
+
+Gradle (Kotlin DSL)
