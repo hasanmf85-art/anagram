@@ -71,17 +71,18 @@ gradlew.bat run
 ```
 ---
 
-### 📊 Example Output
-text
-akte teak kate
-alt tal
-andre rande denar ander
+## 📊 Example Output
+
+-  akte teak kate
+-  alt tal
+-  andre rande denar ander
+
 Each line represents a group of words that are anagrams.
 
 ---
-### 🧠 Core Logic
+## 🧠 Core Logic
 
-
+```bash
 kotlin
 val anagramGroups = words.groupBy { word ->
     word.toCharArray().sorted().joinToString("")
@@ -93,7 +94,9 @@ val validGroups = anagramGroups.values
 validGroups.forEach {
     println(it.joinToString(" "))
 }
-📁 File Format
+```
+----
+## 📁 File Format
 The input file (eventyr.txt) should contain one word per line, for example:
 
 text
@@ -102,7 +105,9 @@ teak
 kate
 alt
 tal
-🛠️ Built With
+----
+
+## 🛠️ Built With
 Kotlin
 
 Gradle (Kotlin DSL)
